@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mvtec-bottle-anomaly-detection"
+version = "0.1.0"
+description = "Convolutional autoencoder for unsupervised industrial anomaly detection on MVTec AD bottles"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+authors = [{name = "Ayoub Hamdoun"}]
+dependencies = [
+  "matplotlib>=3.8,<4",
+  "numpy>=1.26,<3",
+  "pandas>=2.1,<3",
+  "Pillow>=10,<13",
+  "scikit-learn>=1.4,<2",
+  "streamlit>=1.38,<2",
+  "tensorflow>=2.16,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<10",
+  "ruff>=0.6,<1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+extend-exclude = ["legacy"]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Local data and generated outputs
+data/
+datasets/
+outputs/
+reports/*.csv
+reports/*.json
+reports/*.png
+
+# Streamlit secrets
+.streamlit/secrets.toml
